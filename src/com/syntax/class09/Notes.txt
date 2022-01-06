@@ -1,0 +1,20 @@
+Selenium waits:
+1)Why avoid Thread.sleep()???
+
+
+
+Implicit wait:
+Will be applied to all the FindElement()
+We use these waits to "wait" and find those elements which are not yet there in the DOM, for a specific threshold
+before we throw an exception.
+
+Explicit wait or Webdriver wait:
+
+
+
+WebTables:
+They are elements on the webpage that have rows and columns.
+
+Types:
+1. Static WebTable
+2. Dynamic WebTables

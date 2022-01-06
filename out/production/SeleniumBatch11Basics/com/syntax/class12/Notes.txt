@@ -1,0 +1,21 @@
+1)POM: Page Object Model
+   It's a design pattern which allows us to enhance test maintenance and reduce code duplication + improve readability
+
+   Advantages:
+   1. Code reuseability
+   2. Code Maintainability
+   3. Readability
+
+
+PageFactory:
+It is a class in Selenium That allows us to interact with stored elements
+
+@FindBy(id="textuser")
+@FindBy(xpath="textuser")
+@FindBy(css="textuser")
+
+1 more extra thing if you are using page factory, you need initialize your variable
+
+public loginWithPageFactory(){
+PageFactory.initElements(driver,this);
+}

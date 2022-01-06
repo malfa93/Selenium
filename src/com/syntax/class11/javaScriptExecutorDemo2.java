@@ -1,0 +1,39 @@
+package com.syntax.class11;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.util.concurrent.TimeUnit;
+
+public class javaScriptExecutorDemo2 {
+
+    public static String url = "http://amazon.com";
+
+    public static void main(String[] args) throws InterruptedException {
+
+        System.setProperty("webdriver.chrome.driver", "drivers/chromedriver");
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get(url);
+        driver.manage().timeouts().implicitlyWait(12, TimeUnit.SECONDS);
+
+
+
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+
+        js.executeScript("window.scrollBy(0,1000)");
+
+        Thread.sleep(2000);
+        //        scrool up
+        js.executeScript("window.scrollBy(0,-4000)");
+
+//        scroll till the element is in view
+        WebElement backtoTop = driver.findElement(By.cssSelector("span.navFooterBackToTopText"));
+
+        js.executeScript("arguments[0].scrollIntoView(true)",backtoTop);
+    }
+}
